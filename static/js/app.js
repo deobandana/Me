@@ -307,10 +307,10 @@ d3.json("data/samples.json").then((dataset) => {
     if (checkedValue==='bar'){
     //show the bar chart
       showbarChart(sample, userSample);
-  /*   } else { */
+    } else {
     //show the Pie chart
-     /*  showpieChart(sample, userSample); */
-/*     } */
+      showpieChart(sample, userSample);
+    }
 
     //show data info
     showInfo(metadata, userSample)
