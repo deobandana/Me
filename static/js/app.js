@@ -267,7 +267,7 @@ function getCheckedRadioValue(radioGroupName) {
 d3.json("data/samples.json").then((dataset) => {
   var selectDrop = d3.select("#selDataset");
   selectDrop.selectAll('option')
-    .data(dataset.names.map(item => "ID NO " + item))
+    .data(dataset.names.map(item => "BB_" + item))
     .enter().append('option')
     .text(text => text)
 
@@ -299,7 +299,7 @@ d3.json("data/samples.json").then((dataset) => {
     // Select the inputElement
     var inputElement = d3.select("select");
     // Acquire the value property of the inputEelement and remove BB_.
-    var userSample = inputElement.property("value").replace('ID NO', '');
+    var userSample = inputElement.property("value").replace('BB_', '');
 /* 
     //Acquire the the value property of the radio input
     checkedValue = getCheckedRadioValue("type");
