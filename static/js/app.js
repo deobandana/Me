@@ -80,7 +80,7 @@ function showbarChart(sample, name) {
 // function3: show pie chart
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function showpieChart(sample, name) {
+/* function showpieChart(sample, name) {
 
   var showData = getTop10OOTU(sample, name);
   var trace1 = {
@@ -99,7 +99,7 @@ function showpieChart(sample, name) {
 
   Plotly.newPlot("bar", traceDisplay1, disPlayLayout1);
 
-}
+} */
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 // function3: End
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -245,7 +245,7 @@ function showInfo(metadata, name) {
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 // function7: get Checked RadioValue
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-function getCheckedRadioValue(radioGroupName) {
+/* function getCheckedRadioValue(radioGroupName) {
   var rads = document.getElementsByName(radioGroupName),
     i;
   for (i = 0; i < rads.length; i++)
@@ -253,7 +253,7 @@ function getCheckedRadioValue(radioGroupName) {
       return rads[i].value;
   return null; // or undefined, or your preferred default for none checked
 }
-
+ */
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 // function7 : end
@@ -301,13 +301,12 @@ d3.json("data/samples.json").then((dataset) => {
     // Acquire the value property of the inputEelement and remove BB_.
     var userSample = inputElement.property("value").replace('BB_', '');
 
-    //Acquire the the value property of the radio input
-  
 
-    
-      showbarChart(sample, userSample);
-    
-
+   
+   
+   
+     //show Bar Chart
+	 showbarChart(sample, userSample);
     //show data info
     showInfo(metadata, userSample)
     //show Gauge chart
