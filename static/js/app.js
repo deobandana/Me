@@ -244,7 +244,7 @@ function showInfo(metadata, name) {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 // function7: get Checked RadioValue
-/////////////////////////////////////////////////////////////////////////////////////////////////////
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////
 function getCheckedRadioValue(radioGroupName) {
   var rads = document.getElementsByName(radioGroupName),
     i;
@@ -252,7 +252,7 @@ function getCheckedRadioValue(radioGroupName) {
     if (rads[i].checked)
       return rads[i].value;
   return null; // or undefined, or your preferred default for none checked
-}
+} */
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -267,7 +267,7 @@ function getCheckedRadioValue(radioGroupName) {
 d3.json("data/samples.json").then((dataset) => {
   var selectDrop = d3.select("#selDataset");
   selectDrop.selectAll('option')
-    .data(dataset.names.map(item => "BB_" + item))
+    .data(dataset.names.map(item => "ID NO " + item))
     .enter().append('option')
     .text(text => text)
 
@@ -299,17 +299,17 @@ d3.json("data/samples.json").then((dataset) => {
     // Select the inputElement
     var inputElement = d3.select("select");
     // Acquire the value property of the inputEelement and remove BB_.
-    var userSample = inputElement.property("value").replace('BB_', '');
-
-  /*   //Acquire the the value property of the radio input
+    var userSample = inputElement.property("value").replace('ID NO', '');
+/* 
+    //Acquire the the value property of the radio input
     checkedValue = getCheckedRadioValue("type");
 
-    if (checkedValue==='bar'){
+    if (checkedValue==='bar'){ */
     //show the bar chart
       showbarChart(sample, userSample);
-    } else {
-    //show the Pie chart */
-      showpieChart(sample, userSample);
+    /* } else {
+    //show the Pie chart
+      showpieChart(sample, userSample); */
 /*     } */
 
     //show data info
